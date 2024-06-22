@@ -3,6 +3,7 @@ import 'dart:io';
 void main(List<String> args) {
   List<String?> nombresAlumnos = [];
   List<String?> temasExposiciones = [];
+  List<String?> Adso2873711 = [];
   int opcion = 0, cantAlumnos = 0, cantTemas = 0;
   String? nombreAlumnos, temasExposicion;
 
@@ -13,7 +14,8 @@ void main(List<String> args) {
     print("1. Ingresar temas de exposicion)");
     print("2. Ingresar alumno(s)");
     print("3. Asignacion aleatoria de grupos de Exposicion");
-    print("4. Salir de la aplicacion");
+    print("4. Trabajar con lista precargada");
+    print("5. Salir de la aplicacion");
     print("***************************");
     opcion = int.parse(stdin.readLineSync()!);
     print("***************************");
@@ -36,6 +38,9 @@ void main(List<String> args) {
         print("************************");
         break;
       case 3:
+      void;
+        break;
+      case 4:
     }
   } while (opcion != 4);
 }
