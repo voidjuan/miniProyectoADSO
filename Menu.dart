@@ -1,6 +1,30 @@
 import 'dart:io';
 import 'dart:math';
 
+int leerEntero(String Texto) {
+  while (true) {
+    print(Texto);
+    try {
+      String? input = stdin.readLineSync();
+      if (input != null && input.isNotEmpty) {
+        return int.parse(input);
+      }
+    } catch (e) {
+      print("Por favor, digite de nuevo el valor.");
+    }
+  }
+}
+
+String leerCadena(String Texto) {
+  print(Texto);
+  String? input = stdin.readLineSync();
+  while (input == null || input.isEmpty) {
+    print("Por favor, digite de nuevo el valor.");
+    input = stdin.readLineSync();
+  }
+  return input;
+}
+
 class Tema {
   String temasExposicion;
   int cantAlumnos;
@@ -39,7 +63,7 @@ void main(List<String> args) {
         asignarAlumnosAleatoria();
         break;
       case 4:
-        precargarDatosPrueba();
+        datosPrecargados();
         break;
       case 5:
         print("Hasta luego...");
@@ -252,7 +276,7 @@ void asignarAlumnosAleatoria() {
   }
 }
 
-void precargarDatosPrueba() {
+void datosPrecargados() {
   temasExposiciones = [
     Tema("Que es POO?", 3),
     Tema("Difrencia entre POO y PE", 3),
@@ -298,26 +322,4 @@ void precargarDatosPrueba() {
   print("Datos precargados correctamente.");
 }
 
-String leerCadena(String Texto) {
-  print(Texto);
-  String? input = stdin.readLineSync();
-  while (input == null || input.isEmpty) {
-    print("Por favor, digite de nuevo el valor.");
-    input = stdin.readLineSync();
-  }
-  return input;
-}
 
-int leerEntero(String Texto) {
-  while (true) {
-    print(Texto);
-    try {
-      String? input = stdin.readLineSync();
-      if (input != null && input.isNotEmpty) {
-        return int.parse(input);
-      }
-    } catch (e) {
-      print("Por favor, digite de nuevo el valor.");
-    }
-  }
-}
