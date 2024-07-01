@@ -26,11 +26,11 @@ String leerCadena(String Texto) {
 }
 
 class Tema {
-  String temasExposicion;
+  String temaExposicion;
   int cantAlumnos;
   List<String> alumnosAsignados = [];
 
-  Tema(this.temasExposicion, this.cantAlumnos);
+  Tema(this.temaExposicion, this.cantAlumnos);
 }
 
 List<Tema> temasExposiciones = [];
@@ -86,6 +86,7 @@ void manejoTemasExposicion() {
     print("5. Volver al menu principal");
     print("***************************");
     opcion = int.parse(stdin.readLineSync()!);
+    print("***************************");
     switch (opcion) {
       case 1:
         crearTema();
@@ -124,7 +125,7 @@ void editarTema() {
     String nuevoNombre = leerCadena("Digite un nuevo nombre para el tema: ");
     int nuevaCantidad =
         leerEntero("Digite la nueva cantidad de alumnos del grupo: ");
-    temasExposiciones[numTema].temasExposicion = nuevoNombre;
+    temasExposiciones[numTema].temaExposicion = nuevoNombre;
     temasExposiciones[numTema].cantAlumnos = nuevaCantidad;
     print("El tema ha sido editado");
   } else {
@@ -152,7 +153,7 @@ void mostrarTemas() {
     print('Lista de temas de exposicion:');
     for (int i = 0; i < temasExposiciones.length; i++) {
       print(
-          '${i + 1}. ${temasExposiciones[i].temasExposicion} (${temasExposiciones[i].cantAlumnos} alumnos(s))');
+          '${i + 1}. ${temasExposiciones[i].temaExposicion} (${temasExposiciones[i].cantAlumnos} alumnos(s))');
     }
   }
 }
@@ -166,8 +167,9 @@ void manejoAlumnos() {
     print("3. Eliminar Alumno");
     print("4. Mostrar Alumno");
     print("5. Volver al menú principal");
-
+    print("***************************");
     opcion = leerEntero("Ingrese la opción deseada: ");
+    print("***************************");
 
     switch (opcion) {
       case 1:
@@ -262,7 +264,7 @@ void asignarAlumnosAleatoria() {
 
   print("\nAsignación de alumnos a temas de exposicion:");
   for (var tema in temasExposiciones) {
-    print("${tema.temasExposicion}:");
+    print("${tema.temaExposicion}:");
     for (var Alumno in tema.alumnosAsignados) {
       print("- $Alumno");
     }
@@ -318,8 +320,7 @@ void datosPrecargados() {
     "MATEO HERRERA VARGAS",
     "ALEJANDRO VALLEJO ESCOBAR",
   ];
-  
+
   print("Datos precargados correctamente.");
+  print("**************************");
 }
-
-
